@@ -14,13 +14,12 @@ $().ready(function() {
 	function updateVendor(vendor) {
 		$.post(
 			"http://prs.gregorydoud.net/Vendors/Change/",
-			JSON.stringify(vendor),
-			function() {
-				console.log("Update Successful!");
+			//JSON.stringify(vendor),
+			vendor,
+			function(resp) {
+				console.log("Update Successful!", resp);
 			}
-		).fail(function(err) {
-			console.log(err);
-		});
+		);
 	}
 
 	function getVendor(id) {
